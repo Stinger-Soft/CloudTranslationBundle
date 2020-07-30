@@ -1,0 +1,5 @@
+.idea
+vendor
+Tests/google.txt
+Tests/deepl.txt
+composer.lock

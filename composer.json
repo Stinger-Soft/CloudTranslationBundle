@@ -1,0 +1,51 @@
+{
+  "name": "stinger-soft/cloud-translation-bundle",
+  "type": "symfony-bundle",
+  "description": "Abstraction Layer to translate text and files through the cloud",
+  "keywords": [
+    "Grid",
+    "Table"
+  ],
+  "homepage": "http://www.stinger-soft.net",
+  "authors": [
+    {
+      "name": "Oliver Kotte",
+      "email": "oliver.kotte@stinger-soft.net",
+      "role": "Developer"
+    },
+    {
+      "name": "Florian Meyer",
+      "email": "florian.meyer@stinger-soft.net",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "StingerSoft\\CloudTranslationBundle\\": ""
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "license": "Apache-2.0",
+
+  "require": {
+    "php": "^7.4",
+    "google/cloud-translate": "^1.7",
+    "babymarkt/deepl-php-lib": "^1.0.10",
+    "symfony/framework-bundle": "^4.3"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "phpunit/phpunit": "^9.2.6"
+  },
+
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev",
+      "dev-develop": "1.0.x-dev"
+    }
+  }
+}
