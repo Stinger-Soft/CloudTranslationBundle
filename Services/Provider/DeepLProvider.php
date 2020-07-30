@@ -14,19 +14,22 @@ namespace StingerSoft\CloudTranslationBundle\Services\Provider;
 
 
 use BabyMarkt\DeepL\DeepL;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class DeepLProvider implements TranslationProvider {
+
+	public const PARAMETER_LICENSE_KEY = 'deepl_auth_key';
 
 	/**
 	 * @var DeepL
 	 */
-	protected $connector;
+	protected DeepL $connector;
 
 	/**
-	 *
+	 * @param ParameterBagInterface $parameterBag
 	 */
-	public function __construct() {
-		$this->connector = new DeepL('');
+	public function __construct(ParameterBagInterface $parameterBag) {
+		$this->connector = new DeepL($parameterBag->get(self::PARAMETER_LICENSE_KEY));
 	}
 
 	public const CAPABILITIES = [

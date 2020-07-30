@@ -33,6 +33,9 @@ class Configuration implements ConfigurationInterface {
 			->scalarNode('google_auth_key')
 			->defaultNull()
 			->end()
+			->scalarNode('deepl_auth_key')
+			->defaultNull()
+			->end()
 			->end();
 		// @formatter:on
 

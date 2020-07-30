@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace StingerSoft\CloudTranslationBundle\DependencyInjection;
 
+use StingerSoft\CloudTranslationBundle\Services\Provider\DeepLProvider;
 use StingerSoft\CloudTranslationBundle\Services\Provider\GoogleProvider;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -35,5 +36,6 @@ class StingerSoftCloudTranslationExtension extends Extension {
 		$loader->load('services.yml');
 
 		$container->setParameter(GoogleProvider::PARAMETER_LICENSE_KEY, $config['google_auth_key']);
+		$container->setParameter(DeepLProvider::PARAMETER_LICENSE_KEY, $config['deepl_auth_key']);
 	}
 }
