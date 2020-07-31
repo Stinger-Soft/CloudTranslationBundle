@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace StingerSoft\CloudTranslationBundle\DependencyInjection;
 
+use StingerSoft\CloudTranslationBundle\Services\Provider\GoogleProvider;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -30,6 +31,9 @@ class Configuration implements ConfigurationInterface {
 
 		// @formatter:off
 		$root->children()
+			->scalarNode('default_provider')
+			->defaultValue(GoogleProvider::class)
+			->end()
 			->scalarNode('google_auth_key')
 			->defaultNull()
 			->end()

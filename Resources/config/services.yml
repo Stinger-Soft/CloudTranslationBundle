@@ -3,5 +3,5 @@ services:
     autowire: true
     autoconfigure: true
 
-  StingerSoft\CloudTranslationBundle\Services\Provider:
+  StingerSoft\CloudTranslationBundle\Services\Provider\:
     resource: '../../Services/Provider/*'
